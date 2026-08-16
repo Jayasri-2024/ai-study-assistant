@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #12002f, #24005c, #4b0082);
+    color: white;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #d8c7ff;
+    font-size: 17px;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+.study-box,
+.answer-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.study-box h2,
+.answer-box h2 {
+    margin-bottom: 22px;
+    color: #d9b8ff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #cfc2e8;
+}
+
+select option {
+    color: black;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8a2be2, #c05cff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(192, 92, 255, 0.4);
+}
+
+.answer-box {
+    line-height: 1.7;
+}
+
+.answer-box h3 {
+    color: #d9b8ff;
+    margin-bottom: 12px;
+}
+
+.answer-box p {
+    margin-bottom: 12px;
+}
+
+.answer-box ul {
+    margin: 10px 0 15px 25px;
+}
+
+.answer-box li {
+    margin-bottom: 6px;
+}
+
+.answer-box hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .study-box,
+    .answer-box {
+        padding: 22px;
+    }
+}
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: #d9b8ff;
+    font-weight: bold;
+    animation: pulse 1.2s infinite;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+#clearBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#clearBtn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}

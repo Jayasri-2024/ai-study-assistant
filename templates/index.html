@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>AI Study Assistant 🤖</h1>
+        <p>Your smart companion for learning</p>
+    </header>
+
+    <main>
+
+    <section class="study-box">
+
+    <h2>What do you want to learn?</h2>
+
+<form action="/ask" method="POST">
+
+    <input 
+        type="text" 
+        name="question" 
+        placeholder="Ask your question..."
+        value="{{ question or '' }}"
+        required
+    >
+
+    <select name="difficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+
+    <select name="action">
+        <option value="Explain">Explain</option>
+        <option value="Notes">Notes</option>
+        <option value="Quiz">Quiz</option>
+    </select>
+
+    <button type="submit" id="askBtn">
+    <span id="btnText">🤖 Ask AI</span>
+</button>
+<button type="button" id="clearBtn">🗑️ Clear</button>
+</form>
+<div id="loading" class="loading">
+    🤖 AI is thinking...
+</div>
+</section>
+        <section class="answer-box">
+
+    <h2>AI Response</h2>
+
+    <div>
+        {{ response|safe if response else "Your AI-generated answer will appear here..." }}
+    </div>
+
+</section>
+
+    </main>
+<script>
+const form = document.querySelector("form");
+const button = document.getElementById("askBtn");
+const btnText = document.getElementById("btnText");
+const loading = document.getElementById("loading");
+
+const clearBtn = document.getElementById("clearBtn");
+const questionInput = document.querySelector('input[name="question"]');
+const difficulty = document.querySelector('select[name="difficulty"]');
+const action = document.querySelector('select[name="action"]');
+const responseBox = document.querySelector(".answer-box div");
+
+form.addEventListener("submit", function () {
+    button.disabled = true;
+    btnText.innerText = "⏳ Processing...";
+    loading.style.display = "block";
+});
+
+clearBtn.addEventListener("click", function () {
+    questionInput.value = "";
+    difficulty.value = "Easy";
+    action.value = "Explain";
+
+    responseBox.innerHTML =
+        "Your AI-generated answer will appear here...";
+
+    button.disabled = false;
+    btnText.innerText = "🤖 Ask AI";
+    loading.style.display = "none";
+});
+</script>
+</body>
+
+</html>
