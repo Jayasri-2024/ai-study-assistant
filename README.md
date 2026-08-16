@@ -42,15 +42,18 @@ computer science topics based on their selected difficulty level.
 1. Clone the repository.
 
 2. Open the project folder.
-
 3. Install Flask:
 
 ```bash
 pip install flask
+```
+
 ## 🌐 Live Demo
 
 👉 [AI Study Assistant - Live Website](https://ai-study-assistant-03lz.onrender.com)
+
 ## 🎯 Project Goal
+
 
 The goal of this project is to provide students with a simple
 and interactive platform for learning technical concepts through
