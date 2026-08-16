@@ -47,6 +47,9 @@ computer science topics based on their selected difficulty level.
 
 ```bash
 pip install flask
+## 🌐 Live Demo
+
+👉 [AI Study Assistant - Live Website](https://ai-study-assistant-03lz.onrender.com)
 ## 🎯 Project Goal
 
 The goal of this project is to provide students with a simple
