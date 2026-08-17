@@ -1451,70 +1451,70 @@ def ask():
             """
 
         elif action == "Quiz":
-    answer = """
-    <h3>🧠 Data Structures Mini Quiz</h3>
+            answer = """
+            <h3>🧠 Data Structures Mini Quiz</h3>
 
-    <div class="quiz-question">
-        <p><b>1. Which data structure follows LIFO?</b></p>
+            <div class="quiz-question">
+                <p><b>1. Which data structure follows LIFO?</b></p>
 
-        <label>
-            <input type="radio" name="ds_q1" value="A">
-            A) Queue
-        </label>
+                <label>
+                    <input type="radio" name="ds_q1" value="A">
+                    A) Queue
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q1" value="B">
-            B) Stack
-        </label>
+                <label>
+                    <input type="radio" name="ds_q1" value="B">
+                    B) Stack
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q1" value="C">
-            C) Array
-        </label>
-    </div>
+                <label>
+                    <input type="radio" name="ds_q1" value="C">
+                    C) Array
+                </label>
+            </div>
 
-    <div class="quiz-question">
-        <p><b>2. Which data structure follows FIFO?</b></p>
+            <div class="quiz-question">
+                <p><b>2. Which data structure follows FIFO?</b></p>
 
-        <label>
-            <input type="radio" name="ds_q2" value="A">
-            A) Stack
-        </label>
+                <label>
+                    <input type="radio" name="ds_q2" value="A">
+                    A) Stack
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q2" value="B">
-            B) Tree
-        </label>
+                <label>
+                    <input type="radio" name="ds_q2" value="B">
+                    B) Tree
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q2" value="C">
-            C) Queue
-        </label>
-    </div>
+                <label>
+                    <input type="radio" name="ds_q2" value="C">
+                    C) Queue
+                </label>
+            </div>
 
-    <div class="quiz-question">
-        <p><b>3. Which data structure stores elements in key-value pairs?</b></p>
+            <div class="quiz-question">
+                <p><b>3. Which data structure stores elements in key-value pairs?</b></p>
 
-        <label>
-            <input type="radio" name="ds_q3" value="A">
-            A) Dictionary
-        </label>
+                <label>
+                    <input type="radio" name="ds_q3" value="A">
+                    A) Dictionary
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q3" value="B">
-            B) Stack
-        </label>
+                <label>
+                    <input type="radio" name="ds_q3" value="B">
+                    B) Stack
+                </label>
 
-        <label>
-            <input type="radio" name="ds_q3" value="C">
-            C) Queue
-        </label>
-    </div>
+                <label>
+                    <input type="radio" name="ds_q3" value="C">
+                    C) Queue
+                </label>
+            </div>
 
-    <button type="button" id="checkDsQuiz">✅ Check Answers</button>
+            <button type="button" id="checkDsQuiz">✅ Check Answers</button>
 
-    <div id="dsQuizResult"></div>
-    """
+            <div id="dsQuizResult"></div>
+            """
     # ---------- GENERAL TOPIC ----------
     else:
 
