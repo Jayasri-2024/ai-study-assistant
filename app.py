@@ -16,6 +16,10 @@ def ask():
     action = request.form.get("action", "Explain")
 
     topic = question.lower()
+    print("QUESTION:", question)
+    print("TOPIC:", topic)
+    print("ACTION:", action)
+    print("DIFFICULTY:", difficulty)
     answer = ""
 # Difficulty-based introduction
     if difficulty == "Easy":
@@ -119,7 +123,7 @@ def ask():
                 """
 
 
-    elif action == "Notes":
+        elif action == "Notes":
             answer = """
             <h3>📝 Python - Quick Notes</h3>
 
@@ -135,23 +139,47 @@ def ask():
             simple, powerful and versatile.</p>
             """
 
-    elif action == "Quiz":
+        elif action == "Quiz":
             answer = """
-            <h3>🧠 Python Quiz</h3>
+            <h3>🧠 Python Mini Quiz</h3>
 
-            <p><b>1. What type of language is Python?</b></p>
-            <p>A) Low-level &nbsp; B) High-level &nbsp; C) Assembly</p>
+            <div class="quiz-question">
+                <p><b>1. What type of language is Python?</b></p>
 
-            <p><b>Answer:</b> B) High-level</p>
+                <label>
+                    <input type="radio" name="q1" value="A">
+                    A) Low-level
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="q1" value="B">
+                    B) High-level
+                </label>
 
-            <p><b>2. Which feature makes Python beginner-friendly?</b></p>
-            <p>A) Complex syntax &nbsp; B) Readable syntax</p>
+                <label>
+                    <input type="radio" name="q1" value="C">
+                    C) Assembly
+                </label>
+            </div>
 
-            <p><b>Answer:</b> B) Readable syntax</p>
+            <div class="quiz-question">
+                <p><b>2. Which feature makes Python beginner-friendly?</b></p>
+
+                <label>
+                    <input type="radio" name="q2" value="A">
+                    A) Complex syntax
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="B">
+                    B) Readable syntax
+                </label>
+            </div>
+
+            <button type="button" id="checkQuiz">✅ Check Answers</button>
+
+            <div id="quizResult"></div>
             """
-
     # ---------- JAVA ----------
     # ---------- JAVA ----------
     elif "java" in topic:
@@ -161,114 +189,117 @@ def ask():
             if difficulty == "Easy":
                 answer = """
                 <h3>☕ Java - Easy Level</h3>
-
                 <p>
-                Java is a popular programming language used to create
-                different types of applications.
+                Java is a programming language used to create
+                applications and software.
                 </p>
 
                 <p><b>Simple Example:</b></p>
-
                 <pre>
     System.out.println("Hello World");
                 </pre>
 
+                <p>This statement prints Hello World on the screen.</p>
+                """
+
+            elif difficulty == "Medium":
+                answer = """
+                <h3>☕ Java - Medium Level</h3>
+
                 <p>
-                This statement displays <b>Hello World</b> on the screen.
+                Java is an object-oriented and platform-independent
+                programming language.
                 </p>
 
-                <p><b>Java is used for:</b></p>
+                <p><b>Important Java concepts:</b></p>
                 <ul>
-                    <li>Application Development</li>
-                    <li>Web Development</li>
-                    <li>Android Development</li>
+                    <li>Classes and Objects</li>
+                    <li>Inheritance</li>
+                    <li>Polymorphism</li>
+                    <li>Encapsulation</li>
+                    <li>Abstraction</li>
+                </ul>
+
+                <p>
+                Java applications run using the Java Virtual Machine (JVM).
+                </p>
+                """
+
+            else:
+                answer = """
+                <h3>☕ Java - Hard Level</h3>
+
+                <p>
+                Java is a strongly typed, object-oriented programming
+                language designed to provide portability through the JVM.
+                </p>
+
+                <p><b>Advanced Java concepts:</b></p>
+                <ul>
+                    <li>JVM Architecture</li>
+                    <li>Garbage Collection</li>
+                    <li>Multithreading</li>
+                    <li>Exception Handling</li>
+                    <li>Generics</li>
+                    <li>Collections Framework</li>
+                    <li>Java Memory Management</li>
                 </ul>
                 """
 
-        elif difficulty == "Medium":
-            answer = """
-            <h3>☕ Java - Medium Level</h3>
-
-            <p>
-            Java is an object-oriented programming language designed
-            to be portable and platform independent.
-            </p>
-
-            <p><b>Important Java concepts:</b></p>
-            <ul>
-                <li>Classes and Objects</li>
-                <li>Inheritance</li>
-                <li>Polymorphism</li>
-                <li>Encapsulation</li>
-                <li>Abstraction</li>
-                <li>Exception Handling</li>
-            </ul>
-
-            <p>
-            Java programs are compiled into bytecode and executed
-            using the Java Virtual Machine (JVM).
-            </p>
-            """
-
-        else:
-            answer = """
-            <h3>☕ Java - Hard Level</h3>
-
-            <p>
-            Java is a strongly typed, object-oriented programming
-            language that runs on the Java Virtual Machine (JVM).
-            </p>
-
-            <p><b>Advanced Java concepts:</b></p>
-            <ul>
-                <li>JVM Architecture</li>
-                <li>Multithreading</li>
-                <li>Garbage Collection</li>
-                <li>Collections Framework</li>
-                <li>Generics</li>
-                <li>JDBC</li>
-                <li>Concurrency</li>
-            </ul>
-
-            <p>
-            The JVM provides platform independence by executing
-            Java bytecode on different operating systems.
-            </p>
-            """
-
-    elif action == "Notes":
+        elif action == "Notes":
             answer = """
             <h3>📝 Java - Quick Notes</h3>
 
             <ul>
                 <li>Java is an object-oriented programming language.</li>
-                <li>Java uses the JVM to run programs.</li>
-                <li>It supports classes and objects.</li>
-                <li>It is platform independent.</li>
-                <li>Java is widely used in application development.</li>
+                <li>Java uses the JVM to execute programs.</li>
+                <li>Java supports classes and objects.</li>
+                <li>Java supports inheritance and polymorphism.</li>
+                <li>Java is platform independent.</li>
             </ul>
             """
 
-    elif action == "Quiz":
+        elif action == "Quiz":
             answer = """
-            <h3>🧠 Java Quiz</h3>
+            <h3>🧠 Java Mini Quiz</h3>
 
-            <p><b>1. What does JVM stand for?</b></p>
-            <p>
-            A) Java Virtual Machine<br>
-            B) Java Variable Method<br>
-            C) Java Visual Model
-            </p>
+            <div class="quiz-question">
+                <p><b>1. What does JVM stand for?</b></p>
 
-            <p><b>Answer:</b> A) Java Virtual Machine</p>
+                <label>
+                    <input type="radio" name="java_q1" value="A">
+                    A) Java Virtual Machine
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="java_q1" value="B">
+                    B) Java Variable Method
+                </label>
 
-            <p><b>2. Is Java object-oriented?</b></p>
-            <p><b>Answer:</b> Yes</p>
+                <label>
+                    <input type="radio" name="java_q1" value="C">
+                    C) Java Visual Model
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. Is Java an object-oriented programming language?</b></p>
+
+                <label>
+                    <input type="radio" name="java_q2" value="A">
+                    A) No
+                </label>
+
+                <label>
+                    <input type="radio" name="java_q2" value="B">
+                    B) Yes
+                </label>
+            </div>
+
+            <button type="button" id="checkJavaQuiz">✅ Check Answers</button>
+
+            <div id="javaQuizResult"></div>
             """
-
-    # ---------- HTML ----------
     # ---------- HTML ----------
     elif "html" in topic:
 
@@ -371,15 +402,50 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 HTML Quiz</h3>
+            <h3>🧠 HTML Mini Quiz</h3>
 
-            <p><b>1. What does HTML stand for?</b></p>
-            <p>HyperText Markup Language</p>
+            <div class="quiz-question">
+                <p><b>1. What does HTML stand for?</b></p>
 
-            <p><b>2. Which tag is used for a paragraph?</b></p>
-                    <p><b>Answer:</b> &lt;p&gt;</p>
-                    """
+                <label>
+                    <input type="radio" name="html_q1" value="A">
+                    A) HyperText Markup Language
+                </label>
 
+                <label>
+                    <input type="radio" name="html_q1" value="B">
+                    B) HighText Machine Language
+                </label>
+
+                <label>
+                    <input type="radio" name="html_q1" value="C">
+                    C) Hyper Tool Multi Language
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. Which tag is used to create a paragraph?</b></p>
+
+                <label>
+                    <input type="radio" name="html_q2" value="A">
+                    A) &lt;h1&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="html_q2" value="B">
+                    B) &lt;p&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="html_q2" value="C">
+                    C) &lt;div&gt;
+                </label>
+            </div>
+
+            <button type="button" id="checkHtmlQuiz">✅ Check Answers</button>
+
+            <div id="htmlQuizResult"></div>
+            """
     # ---------- CSS ----------
     # ---------- CSS ----------
     elif "css" in topic:
@@ -484,13 +550,49 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 CSS Quiz</h3>
+            <h3>🧠 CSS Mini Quiz</h3>
 
-            <p><b>1. What does CSS stand for?</b></p>
-            <p>Cascading Style Sheets</p>
+            <div class="quiz-question">
+                <p><b>1. What does CSS stand for?</b></p>
 
-            <p><b>2. What is CSS mainly used for?</b></p>
-            <p><b>Answer:</b> Styling web pages</p>
+                <label>
+                    <input type="radio" name="css_q1" value="A">
+                    A) Cascading Style Sheets
+                </label>
+
+                <label>
+                    <input type="radio" name="css_q1" value="B">
+                    B) Computer Style System
+                </label>
+
+                <label>
+                    <input type="radio" name="css_q1" value="C">
+                    C) Creative Styling Syntax
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. What is CSS mainly used for?</b></p>
+
+                <label>
+                    <input type="radio" name="css_q2" value="A">
+                    A) Storing data
+                </label>
+
+                <label>
+                    <input type="radio" name="css_q2" value="B">
+                    B) Styling web pages
+                </label>
+
+                <label>
+                    <input type="radio" name="css_q2" value="C">
+                    C) Creating databases
+                </label>
+            </div>
+
+            <button type="button" id="checkCssQuiz">✅ Check Answers</button>
+
+            <div id="cssQuizResult"></div>
             """
     # ---------- AI ----------
     elif topic == "ai" or "artificial intelligence" in topic:
@@ -569,13 +671,49 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 AI Quiz</h3>
+            <h3>🧠 AI Mini Quiz</h3>
 
-            <p><b>1. What does AI stand for?</b></p>
-            <p><b>Answer:</b> Artificial Intelligence</p>
+            <div class="quiz-question">
+                <p><b>1. What does AI stand for?</b></p>
 
-            <p><b>2. Name one area of AI.</b></p>
-            <p><b>Answer:</b> Machine Learning</p>
+                <label>
+                    <input type="radio" name="ai_q1" value="A">
+                    A) Artificial Intelligence
+                </label>
+
+                <label>
+                    <input type="radio" name="ai_q1" value="B">
+                    B) Automated Internet
+                </label>
+
+                <label>
+                    <input type="radio" name="ai_q1" value="C">
+                    C) Advanced Information
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. Which is a major area of AI?</b></p>
+
+                <label>
+                    <input type="radio" name="ai_q2" value="A">
+                    A) Machine Learning
+                </label>
+
+                <label>
+                    <input type="radio" name="ai_q2" value="B">
+                    B) Word Processing
+                </label>
+
+                <label>
+                    <input type="radio" name="ai_q2" value="C">
+                    C) File Management
+                </label>
+            </div>
+
+            <button type="button" id="checkAiQuiz">✅ Check Answers</button>
+
+            <div id="aiQuizResult"></div>
             """
             # ---------- MACHINE LEARNING ----------
     elif "machine learning" in topic:
@@ -673,23 +811,68 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 Machine Learning Quiz</h3>
+            <h3>🧠 Machine Learning Mini Quiz</h3>
 
-            <p><b>1. What is Machine Learning?</b></p>
-            <p>
-            A method that allows computers to learn patterns from data.
-            </p>
+            <div class="quiz-question">
+                <p><b>1. What is Machine Learning?</b></p>
 
-            <p><b>2. Name one type of Machine Learning.</b></p>
-            <p><b>Answer:</b> Supervised Learning</p>
+                <label>
+                    <input type="radio" name="ml_q1" value="A">
+                    A) A method that allows computers to learn from data
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="ml_q1" value="B">
+                    B) A method used only for storing data
+                </label>
 
-            <p><b>3. What is overfitting?</b></p>
-            <p>
-            When a model learns the training data too closely and
-            performs poorly on new data.
-            </p>
+                <label>
+                    <input type="radio" name="ml_q1" value="C">
+                    C) A type of computer hardware
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. Which is a type of Machine Learning?</b></p>
+
+                <label>
+                    <input type="radio" name="ml_q2" value="A">
+                    A) Supervised Learning
+                </label>
+
+                <label>
+                    <input type="radio" name="ml_q2" value="B">
+                    B) Web Development
+                </label>
+
+                <label>
+                    <input type="radio" name="ml_q2" value="C">
+                    C) Database Management
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>3. What is overfitting?</b></p>
+
+                <label>
+                    <input type="radio" name="ml_q3" value="A">
+                    A) A model learning the training data too closely
+                </label>
+
+                <label>
+                    <input type="radio" name="ml_q3" value="B">
+                    B) A model deleting the training data
+                </label>
+
+                <label>
+                    <input type="radio" name="ml_q3" value="C">
+                    C) A model storing data permanently
+                </label>
+            </div>
+
+            <button type="button" id="checkMlQuiz">✅ Check Answers</button>
+
+            <div id="mlQuizResult"></div>
             """
             # ---------- CLOUD COMPUTING ----------
     elif "cloud computing" in topic:
@@ -784,20 +967,68 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 Cloud Computing Quiz</h3>
+            <h3>🧠 Cloud Computing Mini Quiz</h3>
 
-            <p><b>1. What is Cloud Computing?</b></p>
-            <p>
-            Providing computing resources and services through the Internet.
-            </p>
+            <div class="quiz-question">
+                <p><b>1. What is Cloud Computing?</b></p>
 
-            <p><b>2. What does SaaS stand for?</b></p>
-            <p><b>Answer:</b> Software as a Service</p>
+                <label>
+                    <input type="radio" name="cloud_q1" value="A">
+                    A) Providing computing resources through the Internet
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="cloud_q1" value="B">
+                    B) A type of computer hardware
+                </label>
 
-            <p><b>3. Name one cloud service model.</b></p>
-            <p><b>Answer:</b> IaaS</p>
+                <label>
+                    <input type="radio" name="cloud_q1" value="C">
+                    C) A programming language
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. What does SaaS stand for?</b></p>
+
+                <label>
+                    <input type="radio" name="cloud_q2" value="A">
+                    A) Software as a Service
+                </label>
+
+                <label>
+                    <input type="radio" name="cloud_q2" value="B">
+                    B) System as a Software
+                </label>
+
+                <label>
+                    <input type="radio" name="cloud_q2" value="C">
+                    C) Storage as a System
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>3. Which is a cloud service model?</b></p>
+
+                <label>
+                    <input type="radio" name="cloud_q3" value="A">
+                    A) IaaS
+                </label>
+
+                <label>
+                    <input type="radio" name="cloud_q3" value="B">
+                    B) HTML
+                </label>
+
+                <label>
+                    <input type="radio" name="cloud_q3" value="C">
+                    C) CSS
+                </label>
+            </div>
+
+            <button type="button" id="checkCloudQuiz">✅ Check Answers</button>
+
+            <div id="cloudQuizResult"></div>
             """
             # ---------- CYBER SECURITY ----------
     elif "cyber security" in topic or "cybersecurity" in topic:
@@ -899,25 +1130,68 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 Cyber Security Quiz</h3>
+            <h3>🧠 Cyber Security Mini Quiz</h3>
 
-            <p><b>1. What is Cyber Security?</b></p>
-            <p>
-            The practice of protecting digital systems, networks and data.
-            </p>
+            <div class="quiz-question">
+                <p><b>1. What is Cyber Security?</b></p>
 
-            <p><b>2. What is encryption used for?</b></p>
-            <p>
-            <b>Answer:</b> Protecting information by transforming it
-            into a protected form.
-            </p>
+                <label>
+                    <input type="radio" name="cyber_q1" value="A">
+                    A) Protecting digital systems, networks and data
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="cyber_q1" value="B">
+                    B) Creating websites
+                </label>
 
-            <p><b>3. What does authentication do?</b></p>
-            <p>
-            <b>Answer:</b> Verifies the identity of a user.
-            </p>
+                <label>
+                    <input type="radio" name="cyber_q1" value="C">
+                    C) Managing databases
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. What is encryption used for?</b></p>
+
+                <label>
+                    <input type="radio" name="cyber_q2" value="A">
+                    A) Protecting information
+                </label>
+
+                <label>
+                    <input type="radio" name="cyber_q2" value="B">
+                    B) Increasing computer speed
+                </label>
+
+                <label>
+                    <input type="radio" name="cyber_q2" value="C">
+                    C) Creating web pages
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>3. What does authentication do?</b></p>
+
+                <label>
+                    <input type="radio" name="cyber_q3" value="A">
+                    A) Verifies the identity of a user
+                </label>
+
+                <label>
+                    <input type="radio" name="cyber_q3" value="B">
+                    B) Deletes user accounts
+                </label>
+
+                <label>
+                    <input type="radio" name="cyber_q3" value="C">
+                    C) Increases storage space
+                </label>
+            </div>
+
+            <button type="button" id="checkCyberQuiz">✅ Check Answers</button>
+
+            <div id="cyberQuizResult"></div>
             """
             # ---------- DBMS ----------
     elif "dbms" in topic or "database" in topic:
@@ -1018,23 +1292,68 @@ def ask():
 
         elif action == "Quiz":
             answer = """
-            <h3>🧠 DBMS Quiz</h3>
+            <h3>🧠 DBMS Mini Quiz</h3>
 
-            <p><b>1. What does DBMS stand for?</b></p>
-            <p><b>Answer:</b> Database Management System</p>
+            <div class="quiz-question">
+                <p><b>1. What does DBMS stand for?</b></p>
 
-            <p><b>2. What is a Primary Key?</b></p>
-            <p>
-            <b>Answer:</b> A key that uniquely identifies a record
-            in a table.
-            </p>
+                <label>
+                    <input type="radio" name="dbms_q1" value="A">
+                    A) Database Management System
+                </label>
 
-            <hr>
+                <label>
+                    <input type="radio" name="dbms_q1" value="B">
+                    B) Data Backup Management System
+                </label>
 
-            <p><b>3. What is SQL?</b></p>
-            <p>
-            <b>Answer:</b> Structured Query Language.
-            </p>
+                <label>
+                    <input type="radio" name="dbms_q1" value="C">
+                    C) Digital Business Management System
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>2. What is a Primary Key?</b></p>
+
+                <label>
+                    <input type="radio" name="dbms_q2" value="A">
+                    A) A key that uniquely identifies a record
+                </label>
+
+                <label>
+                    <input type="radio" name="dbms_q2" value="B">
+                    B) A key used only for deleting data
+                </label>
+
+                <label>
+                    <input type="radio" name="dbms_q2" value="C">
+                    C) A key used to create a database
+                </label>
+            </div>
+
+            <div class="quiz-question">
+                <p><b>3. What is SQL?</b></p>
+
+                <label>
+                    <input type="radio" name="dbms_q3" value="A">
+                    A) Structured Query Language
+                </label>
+
+                <label>
+                    <input type="radio" name="dbms_q3" value="B">
+                    B) Simple Question Language
+                </label>
+
+                <label>
+                    <input type="radio" name="dbms_q3" value="C">
+                    C) System Query Logic
+                </label>
+            </div>
+
+            <button type="button" id="checkDbmsQuiz">✅ Check Answers</button>
+
+            <div id="dbmsQuizResult"></div>
             """
             # ---------- DATA STRUCTURES ----------
     elif "data structure" in topic or "data structures" in topic:
@@ -1132,23 +1451,70 @@ def ask():
             """
 
         elif action == "Quiz":
-            answer = """
-            <h3>🧠 Data Structures Quiz</h3>
+    answer = """
+    <h3>🧠 Data Structures Mini Quiz</h3>
 
-            <p><b>1. Which data structure follows LIFO?</b></p>
-            <p><b>Answer:</b> Stack</p>
+    <div class="quiz-question">
+        <p><b>1. Which data structure follows LIFO?</b></p>
 
-            <p><b>2. Which data structure generally follows FIFO?</b></p>
-            <p><b>Answer:</b> Queue</p>
+        <label>
+            <input type="radio" name="ds_q1" value="A">
+            A) Queue
+        </label>
 
-            <hr>
+        <label>
+            <input type="radio" name="ds_q1" value="B">
+            B) Stack
+        </label>
 
-            <p><b>3. What is a tree?</b></p>
-            <p>
-            <b>Answer:</b> A hierarchical data structure made up
-            of nodes and relationships.
-            </p>
-            """
+        <label>
+            <input type="radio" name="ds_q1" value="C">
+            C) Array
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <p><b>2. Which data structure follows FIFO?</b></p>
+
+        <label>
+            <input type="radio" name="ds_q2" value="A">
+            A) Stack
+        </label>
+
+        <label>
+            <input type="radio" name="ds_q2" value="B">
+            B) Tree
+        </label>
+
+        <label>
+            <input type="radio" name="ds_q2" value="C">
+            C) Queue
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <p><b>3. Which data structure stores elements in key-value pairs?</b></p>
+
+        <label>
+            <input type="radio" name="ds_q3" value="A">
+            A) Dictionary
+        </label>
+
+        <label>
+            <input type="radio" name="ds_q3" value="B">
+            B) Stack
+        </label>
+
+        <label>
+            <input type="radio" name="ds_q3" value="C">
+            C) Queue
+        </label>
+    </div>
+
+    <button type="button" id="checkDsQuiz">✅ Check Answers</button>
+
+    <div id="dsQuizResult"></div>
+    """
     # ---------- GENERAL TOPIC ----------
     else:
 

@@ -164,3 +164,37 @@ button:disabled {
 #clearBtn:hover {
     background: rgba(255, 255, 255, 0.18);
 }
+.quiz-question {
+    margin-bottom: 25px;
+}
+
+.quiz-question p {
+    margin-bottom: 12px;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.quiz-question label:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.quiz-question input {
+    width: auto;
+    margin-right: 8px;
+}
+
+#checkQuiz {
+    margin-top: 5px;
+}
+
+#quizResult {
+    margin-top: 20px;
+    font-weight: bold;
+}

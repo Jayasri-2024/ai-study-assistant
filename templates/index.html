@@ -92,6 +92,322 @@ clearBtn.addEventListener("click", function () {
     btnText.innerText = "🤖 Ask AI";
     loading.style.display = "none";
 });
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+
+        if (q1 && q1.value === "B") {
+            score++;
+        }
+
+        if (q2 && q2.value === "B") {
+            score++;
+        }
+
+        const result = document.getElementById("quizResult");
+
+        if (!q1 || !q2) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 2</h3>";
+
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkJavaQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="java_q1"]:checked');
+        const q2 = document.querySelector('input[name="java_q2"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "B") {
+            score++;
+        }
+
+        const result = document.getElementById("javaQuizResult");
+
+        if (!q1 || !q2) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 2</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkHtmlQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="html_q1"]:checked');
+        const q2 = document.querySelector('input[name="html_q2"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "B") {
+            score++;
+        }
+
+        const result = document.getElementById("htmlQuizResult");
+
+        if (!q1 || !q2) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 2</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkCssQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="css_q1"]:checked');
+        const q2 = document.querySelector('input[name="css_q2"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "B") {
+            score++;
+        }
+
+        const result = document.getElementById("cssQuizResult");
+
+        if (!q1 || !q2) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 2</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkAiQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="ai_q1"]:checked');
+        const q2 = document.querySelector('input[name="ai_q2"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("aiQuizResult");
+
+        if (!q1 || !q2) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 2</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkMlQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="ml_q1"]:checked');
+        const q2 = document.querySelector('input[name="ml_q2"]:checked');
+        const q3 = document.querySelector('input[name="ml_q3"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "A") {
+            score++;
+        }
+
+        if (q3 && q3.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("mlQuizResult");
+
+        if (!q1 || !q2 || !q3) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 3</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkCloudQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="cloud_q1"]:checked');
+        const q2 = document.querySelector('input[name="cloud_q2"]:checked');
+        const q3 = document.querySelector('input[name="cloud_q3"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "A") {
+            score++;
+        }
+
+        if (q3 && q3.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("cloudQuizResult");
+
+        if (!q1 || !q2 || !q3) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 3</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkCyberQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="cyber_q1"]:checked');
+        const q2 = document.querySelector('input[name="cyber_q2"]:checked');
+        const q3 = document.querySelector('input[name="cyber_q3"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "A") {
+            score++;
+        }
+
+        if (q3 && q3.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("cyberQuizResult");
+
+        if (!q1 || !q2 || !q3) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 3</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkDbmsQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="dbms_q1"]:checked');
+        const q2 = document.querySelector('input[name="dbms_q2"]:checked');
+        const q3 = document.querySelector('input[name="dbms_q3"]:checked');
+
+        if (q1 && q1.value === "A") {
+            score++;
+        }
+
+        if (q2 && q2.value === "A") {
+            score++;
+        }
+
+        if (q3 && q3.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("dbmsQuizResult");
+
+        if (!q1 || !q2 || !q3) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 3</h3>";
+    }
+
+});
+document.addEventListener("click", function (event) {
+
+    if (event.target.id === "checkDsQuiz") {
+
+        let score = 0;
+
+        const q1 = document.querySelector('input[name="ds_q1"]:checked');
+        const q2 = document.querySelector('input[name="ds_q2"]:checked');
+        const q3 = document.querySelector('input[name="ds_q3"]:checked');
+
+        if (q1 && q1.value === "B") {
+            score++;
+        }
+
+        if (q2 && q2.value === "C") {
+            score++;
+        }
+
+        if (q3 && q3.value === "A") {
+            score++;
+        }
+
+        const result = document.getElementById("dsQuizResult");
+
+        if (!q1 || !q2 || !q3) {
+            result.innerHTML = "<p>⚠️ Please answer all questions.</p>";
+            return;
+        }
+
+        result.innerHTML =
+            "<h3>🎉 Your Score: " + score + " / 3</h3>";
+    }
+
+});
 </script>
 </body>
 
