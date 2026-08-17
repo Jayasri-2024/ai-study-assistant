@@ -1,17 +1,17 @@
 # 🤖 AI Study Assistant
 
-A simple and interactive web-based study assistant built using Python and Flask. It helps students understand programming and computer science topics based on their selected difficulty level.
+An interactive web-based study assistant built with Flask that helps students learn programming and computer science topics through explanations, quick notes, and interactive quizzes.
 
 ## ✨ Features
 
-- 🤖 AI-style study assistant interface
-- 📚 Topic-based explanations
-- 📗 Easy, 📘 Medium and 📕 Hard difficulty levels
-- 📝 Quick Notes
-- 🧠 Mini Quizzes
-- 🎨 Modern purple glassmorphism UI
-- 🗑️ Clear button
-- ⏳ Loading animation
+- 📚 Topic-wise explanations
+- 📝 Quick notes for easy revision
+- 🧠 Interactive quizzes with score calculation
+- 🎯 Easy, Medium, and Hard difficulty levels
+- 🤖 AI-style response interface
+- 🗑️ Clear button to reset the form
+- ⏳ Loading animation while processing
+- 💜 Modern purple glassmorphism UI
 - 📱 Responsive design
 
 ## 📚 Supported Topics
@@ -27,42 +27,39 @@ A simple and interactive web-based study assistant built using Python and Flask.
 - DBMS
 - Data Structures
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- Python
-- Flask
+**Frontend**
 - HTML
 - CSS
 - JavaScript
 
-## 🚀 How to Run
+**Backend**
+- Python
+- Flask
 
-1. Clone the repository.
-2. Open the project folder.
-3. Install Flask:
+**Deployment**
+- Render
+
+**Version Control**
+- Git
+- GitHub
+
+## 🎮 How It Works
+
+1. Enter a topic or question.
+2. Select the difficulty level.
+3. Choose an action:
+   - Explain
+   - Notes
+   - Quiz
+4. Click **Ask AI**.
+5. View the generated study response.
+6. For quizzes, select your answers and check your score.
+
+## 🚀 Run Locally
+
+### 1. Clone the repository
 
 ```bash
-pip install flask
-```
-
-4. Run the application:
-
-```bash
-python app.py
-```
-
-5. Open the local URL shown in the terminal.
-
-## 🌐 Live Demo
-
-[🚀 Open AI Study Assistant](https://ai-study-assistant-03lz.onrender.com)
-
-## 🎯 Project Goal
-
-The goal of this project is to provide students with a simple and interactive platform for learning technical concepts through different explanation levels, notes and quizzes.
-
-## 👩‍💻 Developer
-
-**Jayasri M**
-
-B.E. Computer Science and Engineering
+git clone https://github.com/Jayasri-2024/ai-study-assistant.git
